@@ -8,53 +8,12 @@
     android:background="@drawable/main">
 
 
-    <Button
-        android:id="@+id/idBtl0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="184dp"
-
-        android:foregroundTint="@color/black"
-        android:text="Level 0"
-
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/idBtl1"
-        android:layout_width="89dp"
-        android:layout_height="50dp"
-
-        android:text="Level 1"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
-
-    <Button
-        android:id="@+id/idBtl2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginBottom="36dp"
-        android:text="Level 2"
-        android:textColor="#FFFFFF"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img0"
-
-        android:layout_width="151dp"
-        android:layout_height="135dp"
+        android:layout_width="174dp"
+        android:layout_height="131dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/level0"
+        android:src="@drawable/zero"
 
         app:civ_border_color="#FFFFFF"
         app:civ_border_overlay="false"
@@ -63,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.074" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img1"
@@ -71,29 +30,46 @@
         android:layout_width="166dp"
         android:layout_height="131dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/kid1"
+        android:src="@drawable/one"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443" />
+        app:layout_constraintVertical_bias="0.549" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img2"
 
-        android:layout_width="181dp"
-        android:layout_height="133dp"
+        android:layout_width="162dp"
+        android:layout_height="135dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/level2"
+        android:src="@drawable/two"
 
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.819" />
+        app:layout_constraintVertical_bias="0.843" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="364dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bgcolor"
+        android:text="Choose your level to play the game!!"
+
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/img0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

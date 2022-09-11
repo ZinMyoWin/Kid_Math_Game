@@ -7,18 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
 
-    Button level0, level1, level2;
+    CircleImageView level0, level1, level2;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        level0=findViewById(R.id.idBtl0);
-        level1=findViewById(R.id.idBtl1);
-        level2=findViewById(R.id.idBtl2);
+        level0=findViewById(R.id.img0);
+        level1=findViewById(R.id.img1);
+        level2=findViewById(R.id.img2);
+
 
         level0.setOnClickListener(new View.OnClickListener() {
             @Override

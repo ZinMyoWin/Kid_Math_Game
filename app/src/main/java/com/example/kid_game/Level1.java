@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -15,7 +16,7 @@ import java.util.Collections;
 
 public class Level1 extends AppCompatActivity implements View.OnClickListener{
 
-    TextView Level,TotalQ,Question,Timer;
+    TextView Level,TotalQ,Question,Timer,Score;
     Button AnsA, AnsB,AnsC,submitBtn;
 
     int score=0;
@@ -38,6 +39,7 @@ public class Level1 extends AppCompatActivity implements View.OnClickListener{
         TotalQ=findViewById(R.id.idTotalQ);
         Question=findViewById(R.id.idQuestion);
         Timer=findViewById(R.id.idTimer);
+        Score=findViewById(R.id.idscore);
 
         AnsA=findViewById(R.id.idansA);
         AnsB=findViewById(R.id.idansB);
@@ -52,6 +54,7 @@ public class Level1 extends AppCompatActivity implements View.OnClickListener{
         TotalQ.setText("Total question: "+totQuestion);
         loadNewQuestion();
         Timer();
+        Score.setText("Score:"+score);
 
     }
 
@@ -62,15 +65,22 @@ public class Level1 extends AppCompatActivity implements View.OnClickListener{
         AnsA.setBackgroundColor(Color.WHITE);
         AnsB.setBackgroundColor(Color.WHITE);
         AnsC.setBackgroundColor(Color.WHITE);
-
+        Score.setText("Score:"+score);
         Button clickedButton=(Button) view;
 
         if (clickedButton.getId()==R.id.idSubmit){
             countDownTimer.start();
-            if(selectedAnswer.equals(answer+""))
+            if(selectedAnswer.equals(String.valueOf(answer)))
             {
                 score++;
+                MediaPlayer ring= MediaPlayer.create(Level1.this,R.raw.win);
+                ring.start();
             }
+            else{
+                MediaPlayer ring= MediaPlayer.create(Level1.this,R.raw.fail);
+                ring.start();
+            }
+            Score.setText("Score:"+score);
             currentQuestionIndex++;
             loadNewQuestion();
         }
@@ -150,6 +160,7 @@ public class Level1 extends AppCompatActivity implements View.OnClickListener{
 
     public void restartQuiz(){
         score=0;
+        Score.setText("Score:"+score);
         currentQuestionIndex=0;
         loadNewQuestion();
         countDownTimer.start();

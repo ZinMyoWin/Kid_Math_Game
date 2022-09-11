@@ -10,11 +10,13 @@
 
     <TextView
         android:id="@+id/idLevel"
-        android:layout_width="74dp"
-        android:layout_height="36dp"
-        android:textColor="@color/white"
-        android:text="Level 0"
+        android:layout_width="96dp"
+        android:layout_height="44dp"
         android:background="@drawable/round_textview"
+        android:fontFamily="@font/crafty_girls"
+        android:gravity="center"
+        android:text="Level 1"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +30,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_textview"
         android:text="Total Question"
+        android:gravity="center"
+        android:fontFamily="@font/crafty_girls"
+
         android:textSize="20sp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,14 +47,18 @@
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:background="@drawable/round_textview"
-        android:textColor="@color/white"
+        android:fontFamily="@font/crafty_girls"
+        android:gravity="center"
         android:text="Question"
+
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idLevel"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.288" />
 
     <TextView
         android:id="@+id/idTimer"
@@ -79,15 +88,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.624">
 
         <Button
             android:id="@+id/idansA"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-
             android:layout_margin="5dp"
+
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/crafty_girls"
             android:text="Ans A"
             android:textColor="@color/black" />
 
@@ -97,7 +108,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/crafty_girls"
             android:text="Ans B"
+
             android:textColor="@color/black" />
 
         <Button
@@ -106,7 +119,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/crafty_girls"
             android:text="Ans C"
+
             android:textColor="@color/black" />
 
 
@@ -117,12 +132,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded"
+        android:fontFamily="@font/crafty_girls"
         android:text="Submit"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.775" />
+        app:layout_constraintVertical_bias="0.821" />
+
+    <TextView
+        android:id="@+id/idscore"
+        android:layout_width="119dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="140dp"
+        android:text="Score:"
+        android:fontFamily="@font/crafty_girls"
+
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@drawable/round_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

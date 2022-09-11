@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -16,7 +17,7 @@ import java.util.Collections;
 
 public class Level0 extends AppCompatActivity implements View.OnClickListener{
 
-    TextView Level,TotalQ,Question;
+    TextView Level,TotalQ,Question,Score;
     Button AnsA, AnsB,AnsC,submitBtn;
 
     int score=0;
@@ -39,6 +40,8 @@ public class Level0 extends AppCompatActivity implements View.OnClickListener{
         Level=findViewById(R.id.idLevel);
         TotalQ=findViewById(R.id.idTotalQ);
         Question=findViewById(R.id.idQuestion);
+        Score=findViewById(R.id.idscore);
+
 
 
         AnsA=findViewById(R.id.idansA);
@@ -53,6 +56,8 @@ public class Level0 extends AppCompatActivity implements View.OnClickListener{
 
         TotalQ.setText("Total question: "+totQuestion);
         loadNewQuestion();
+        Score.setText("Score:"+score);
+
 
 
     }
@@ -64,15 +69,25 @@ public class Level0 extends AppCompatActivity implements View.OnClickListener{
         AnsA.setBackgroundColor(Color.WHITE);
         AnsB.setBackgroundColor(Color.WHITE);
         AnsC.setBackgroundColor(Color.WHITE);
-
+        Score.setText("Score:"+score);
         Button clickedButton=(Button) view;
 
         if (clickedButton.getId()==R.id.idSubmit){
 
-            if(selectedAnswer.equals(answer))
+
+            if(selectedAnswer.equals(String.valueOf(answer)))
             {
                 score++;
+                Score.setText("Score:"+score);
+
+                MediaPlayer ring= MediaPlayer.create(Level0.this,R.raw.win);
+                ring.start();
             }
+            else{
+                MediaPlayer ring= MediaPlayer.create(Level0.this,R.raw.fail);
+                ring.start();
+            }
+
             currentQuestionIndex++;
             loadNewQuestion();
         }
@@ -145,19 +160,22 @@ public class Level0 extends AppCompatActivity implements View.OnClickListener{
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )
                 .setCancelable(false)
                 .show();
-
     }
 
     public void restartQuiz(){
         score=0;
+        Score.setText("Score:"+score);
         currentQuestionIndex=0;
         loadNewQuestion();
     }
+
     public int randomNumber(int max, int min){
         int range = max - min + 1;
         int rand = (int)(Math.random() * range) + min;
         return rand;
     }
+
+
     public void setUpOption(){
         optionList = new ArrayList<Integer>();
         optionList.add(answer);
