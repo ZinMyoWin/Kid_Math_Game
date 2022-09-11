@@ -150,7 +150,7 @@ public class Level2 extends AppCompatActivity implements View.OnClickListener{
         }
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Score is "+score+"out of"+totQuestion)
+                .setMessage("Congratulations!!\n"+"Your score is "+score+"out of"+totQuestion)
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz() )
                 .setCancelable(false)
                 .show();
